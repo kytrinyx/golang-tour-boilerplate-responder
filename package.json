@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "probot run ./index.js"
+  },
+  "dependencies": {
+    "probot": "~0.5.0"
+  },
+  "devDependencies": {
+    "localtunnel": "^1.8.2"
+  },
+  "engines": {
+    "node": ">= 7.7.0",
+    "npm": ">= 4.0.0"
+  }
+}
