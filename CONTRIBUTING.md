@@ -23,3 +23,7 @@ npm start
 ```
 
 To see the payloads that get delivered to the app, check out the "advanced" tab in your GitHub app.
+
+## Testing
+
+Run the tests with `npm test`.
