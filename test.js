@@ -6,12 +6,12 @@ describe('bot behavior', function () {
 
   it('recognizes issues with placeholder body', function () {
     const text = "Context: http://example.com\r\n\r\nChange the title above to describe your issue and add your feedback here, including code if necessary"
-    expect(boilerplate.hasDefaultBody(text)).toBe(true);
+    expect(boilerplate.hasOnlyDefaultBody(text)).toBe(true);
   })
 
   it('does not match on custom body text', function() {
     const text = "Something else"
-    expect(boilerplate.hasDefaultBody(text)).toBe(false);
+    expect(boilerplate.hasOnlyDefaultBody(text)).toBe(false);
   })
 
   it('recognizes issues with placeholder title', function () {
@@ -26,7 +26,7 @@ describe('bot behavior', function () {
 
   it('does not match on custom body text containing placeholder body', function() {
     const text = "Context: http://example.com\r\n\r\nChange the title above to describe your issue and add your feedback here, including code if necessary\r\n\r\nSomething else"
-    expect(boilerplate.hasDefaultBody(text)).toBe(false);
+    expect(boilerplate.hasOnlyDefaultBody(text)).toBe(false);
   })
 
   it('recognizes issues with placeholder body including added whitespace', function () {
