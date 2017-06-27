@@ -1,6 +1,6 @@
 module.exports = class Boilerplate {
   hasDefaultBody(text) {
-    const body = /Change the title above to describe your issue and add your feedback here, including code if necessary/;
+    const body = /Change the title above to describe your issue and add your feedback here, including code if necessary\s*$/;
     return body.test(text);
   }
 
