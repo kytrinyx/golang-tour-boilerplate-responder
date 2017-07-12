@@ -7,7 +7,7 @@ module.exports = function(robot) {
     const body = context.payload.issue.body;
     const cannedReply = "Thanks for your issue report, but unfortunately you haven't told us what the problem was. Please open a new issue describing your problem.";
 
-    if (boilerplate.hasDefaultTitle(title) || boilerplate.hasDefaultBody(body)) {
+    if (boilerplate.hasDefaultTitle(title) || boilerplate.hasOnlyDefaultBody(body)) {
       return context.github.issues.edit(context.issue({state: 'closed'})).then(() => {
         return context.github.issues.createComment(context.issue({body: cannedReply}));
       });
